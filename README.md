@@ -1,4 +1,5 @@
 # CHAT_APP 24.0
+<img width="642" height="646" alt="ico" src="https://github.com/user-attachments/assets/4cdd503d-1298-4943-8e91-b8caa742256b" />
 
 Aplikasi chat modern berbasis WebView yang ringan, bersih, dan nyaman digunakan.
 
