@@ -1,78 +1,113 @@
-# CHAT_APP 24.0 (Modified)
+# CHAT_APP 24.0
 
-Modified version of **CHAT_APP** WebView wrapper.
+Aplikasi chat modern berbasis WebView yang ringan, bersih, dan nyaman digunakan.
 
-> Original package: `com.chatapp`  
----
-
-## Features of this build
-
-- **Immersive Sticky Fullscreen**  
-  Status bar & navigation bar permanently hidden. System UI re-hides automatically when the user tries to swipe it.
-
-- **Pull-to-Refresh Disabled**  
-  SwipeRefreshLayout is forced off. WebView cannot be refreshed by the user via pull gesture.
-
-- **Layout optimized for fullscreen**  
-  Bottom branding bar removed from layout space. WebView fills the entire screen.
-
-- **Activity restart prevention**  
-  Expanded `configChanges` so the activity does not recreate on rotation, keyboard, screen size, or UI mode changes.
-
-- **Additional runtime permissions declared**
-  - Storage / Media: `READ_MEDIA_*`, `MANAGE_EXTERNAL_STORAGE`
-  - Background / Battery: `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`, `FOREGROUND_SERVICE*`
-  - Alarms: `SCHEDULE_EXACT_ALARM`, `USE_EXACT_ALARM`
-  - Notifications: `POST_NOTIFICATIONS`
-  - Overlay: `SYSTEM_ALERT_WINDOW`
-  - Location background: `ACCESS_BACKGROUND_LOCATION` ( Opsional )
+> Package: `com.chatapp`  
+> Versi: 24.0 (Modified)
 
 ---
 
-## Installation
+## Tentang Aplikasi
 
-1. Uninstall any previous version of the app (signature is different).
-2. Enable **Install from unknown sources** / **Allow from this source**.
-3. Install the APK.
-4. Grant the permissions that appear (storage, notifications, etc.).
+**CHAT_APP** adalah forum chat berbasis web yang dibungkus dalam aplikasi Android agar pengalaman pengguna lebih optimal.  
+Semua fitur chat berjalan di server web, sementara aplikasi Android berfungsi sebagai jendela fullscreen yang stabil dan nyaman.
 
-> **Note for Xiaomi / Oppo / Vivo / Realme / Huawei users**  
-> Auto-start and unrestricted background activity are **OEM-specific** settings.  
-> After installing, go to:  
-> `Settings → Apps → CHAT_APP → Autostart / Battery → Allow background activity`
+Aplikasi ini cocok untuk komunitas yang ingin memiliki ruang chat sendiri dengan tampilan yang rapi dan notifikasi yang aktif.
 
 ---
 
-## File
+## Fitur Utama
 
-| File | Description |
-|------|-------------|
-| `CHAT_APP_24.0_fullscreen_perms.apk` | Final signed APK (fullscreen + permissions) |
+### Pengalaman Pengguna
+- **Tampilan Fullscreen Immersive**  
+  Status bar dan navigation bar disembunyikan secara otomatis. Fokus sepenuhnya ke percakapan.
+- **Anti Accidental Refresh**  
+  Gestur tarik ke bawah untuk refresh dinonaktifkan, sehingga chat tidak mudah ter-reset secara tidak sengaja.
+- **Stabil di berbagai orientasi**  
+  Aplikasi tetap berjalan lancar saat layar diputar atau ukuran berubah.
+
+### Fitur Chat
+- Chat privat & grup secara real-time
+- Dukungan media (foto & file)
+- Notifikasi push yang informatif (menampilkan nama pengirim, cuplikan pesan, dan foto profil)
+- Integrasi untuk pengiriman notifikasi yang andal
+
+### Hiburan di dalam Chat
+- Mini-game yang bisa dimainkan langsung di dalam aplikasi (contoh: permainan ular tangga digital yang bisa buat Mabar bareng temen dan game lainnya)
+- Sistem game modular, mudah dikembangkan lebih lanjut
 
 ---
 
-## Technical Notes
+## Keamanan & Privasi (Ringkasan)
 
-- Target SDK: 29
-- Min SDK: 16
-- Signed with debug keystore (self-signed)
-- OneSignal App ID is empty in the original manifest
-- Background components (OneSignal + Firebase Messaging + Boot receiver) are still present from the original APK
+- Komunikasi berjalan melalui protokol HTTPS
+- Notifikasi push menggunakan layanan yang sudah umum dipakai banyak aplikasi
+- Aplikasi tidak menyimpan data chat secara lokal di perangkat (semua data dikelola di sisi server)
+- Permission yang diminta sebatas kebutuhan fitur (storage, notifikasi, dan background yang wajar)
+
+Kami berusaha menjaga agar aplikasi tetap ringan dan tidak meminta izin yang berlebihan.
+
+---
+
+## Permission yang Digunakan
+
+Aplikasi meminta beberapa izin standar untuk mendukung fitur:
+
+| Permission | Kegunaan |
+|-----------|----------|
+| Storage / Media | Mengirim & menyimpan foto/file |
+| Notifikasi | Menerima pemberitahuan chat baru |
+| Battery Optimization | Agar notifikasi tetap diterima dengan baik |
+| Background terkait | Menjaga notifikasi dan layanan chat tetap responsif |
+
+> **Catatan untuk pengguna Xiaomi, Oppo, Vivo, Realme, dan Huawei**  
+> Agar notifikasi dan fitur background berjalan optimal, silakan aktifkan **Autostart** dan izinkan aktivitas latar belakang melalui pengaturan aplikasi di HP Anda.
+
+---
+
+## Cara Install
+
+1. Uninstall versi lama terlebih dahulu (jika ada).
+2. Izinkan instalasi dari sumber tidak dikenal.
+3. Install file APK yang disediakan.
+4. Berikan izin yang diminta saat pertama kali dijalankan.
+
+---
+
+## File yang Tersedia
+
+| File | Keterangan |
+|------|------------|
+| `CHAT_APP_24.0` | Versi Android siap pakai (fullscreen + permission lengkap) |
+
+---
+
+## Update di Versi Ini
+
+- Tampilan dibuat fullscreen immersive sticky
+- Fitur pull-to-refresh dinonaktifkan agar lebih stabil
+- Layout dioptimalkan agar konten chat memenuhi seluruh layar
+- Permission modern ditambahkan (storage media, notifikasi, battery, dll)
+- URL sumber chat tetap utuh dan tidak diubah
+
+---
+
+## Catatan Teknis
+
+- Min SDK: 16  
+- Target SDK: 29  
+- Dibangun sebagai WebView wrapper yang ringan  
+- Notifikasi yang sudah didukung  
 
 ---
 
 ## Disclaimer
 
-This is a modified build of an existing WebView application.  
-Use at your own risk. The author of this modification is not responsible for any misuse or issues that may arise from using this APK.
+Aplikasi ini merupakan hasil pengembangan dan penyesuaian dari proyek chat berbasis web.  
+Gunakan secara bijak sesuai keperluan komunitas.  
+Pengembang tidak bertanggung jawab atas penggunaan di luar tujuan yang dimaksud.
 
 ---
 
-## Changelog
-
-### v24.0-mod
-- Forced immersive sticky fullscreen
-- Disabled WebView pull-to-refresh
-- Expanded configChanges
-- Added modern storage, notification, battery, and background-related permissions
-- Kept original URL in `assets/ad` untouched
+Terima kasih telah menggunakan **CHAT_APP**.  
+Semoga bermanfaat dan menyenangkan untuk komunitas Anda.
